@@ -91,7 +91,7 @@ To use useFS in your own project you need to add the usefs.js Javascript file to
 <script type="text/javascript" src="q.js"></script>
 <script type="text/javascript" src="usefs.js"></script>
 <script>
-useFS = new UseFS();
+var useFS = new UseFS();
 useFS.fs().useDir('file:///somepath').createDir('newdir').writeText('some text');
 </script>
 ```
@@ -117,7 +117,7 @@ In AngularJS projects it is adviced to inject AngularJS $q into useFS because th
 
 angular.module('myApp').controller('TestController', 
     function($q) {
-        useFS = new UseFS({q: $q});
+        var useFS = new UseFS({q: $q});
         useFS.fs().useDir('file:///somepath').createDir('newdir').writeText('some text').then(
           function() {
             console.log("WRITE COMPLETED");
