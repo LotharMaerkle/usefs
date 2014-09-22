@@ -55,16 +55,7 @@ Compared to the HTML5 file API, using its typical nested structure of callbacks:
 );
 ```
 
-
-
-
-
-
-
-
-
-
-
+... OMG at least 40 lines of nested unmaintainable JavaScript for simple writing some text data to a file! The UseFS library helps to create readable and maintainable code.
 
 Available operations on files
 =========
@@ -111,7 +102,30 @@ API design and usage
 
 As promises are a great way to simplify asyncronuous APIs based on callbacks. If you have never heared of promises in JavaScript, see the readme of the q.js library at https://github.com/kriskowal/q/blob/v1/README.md for an introduction. 
 
-All useFS methods returns a specialized promises with extra operations based wether the object in use is a file or a directory. And these methods returns again a promise, so calls can easily chained.
+All useFS methods returns a specialized promise with extra operations based wether the object in use is a file or a directory. And these methods returns again a promise, so calls can easily chained. That way, simple tasks as writing or reading a file remain simple.
+
+
+Usage in AngularJS projects
+==
+
+In AngularJS projects it is adviced to inject AngularJS $q into useFS because this ensures that the promises are correctly integrated into the AngularJS digester.
+
+```
+<script type="text/javascript" src="angular.js"></script>
+<script type="text/javascript" src="usefs.js"></script>
+<script>
+
+angular.module('myApp').controller('TestController', 
+    function($q) {
+        useFS = new UseFS({q: $q});
+        useFS.fs().useDir('file:///somepath').createDir('newdir').writeText('some text').then(
+          function() {
+            console.log("WRITE COMPLETED");
+          });
+    }
+);
+</script>
+```
 
 
 
