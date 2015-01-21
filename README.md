@@ -63,6 +63,8 @@ Available operations on files
 
   - readText();
   - writeText("string data");
+  - readBinary();
+  - writeBinary();
   - unlink();
   - rename("newName");
 
@@ -75,12 +77,38 @@ Available operations on directories
   - exists("fileName");
   - useSubDir("dirName");
   - removeAllFiles();
+  - removeAll();
   - createSubDir("dirName");
-  
+  - copyIntoDir("dirName");
+  - ls();    // listing of files and directories
+  - useEntry();
+  - unlink();
+  - mkdir();
+  - mkdirs();  
+
+
+
 Available operations on file systems
+=======
 
   - useDir("dirName or path");
   - useFile("fileName or path");
+
+Available operations on path names
+=======
+
+  - UseFS.getFullPathNoEndSeparator();
+  - UseFS.getPathParts();
+  - UseFS.getExtension();
+  - 
+
+
+
+
+
+
+
+
 
 Installation
 ==
