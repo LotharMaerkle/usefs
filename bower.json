@@ -1,0 +1,29 @@
+{
+  "name": "usefs",
+  "version": "0.0.1",
+  "homepage": "https://github.com/LotharMaerkle/usefs",
+  "authors": [
+    "Lothar Maerkle <lm@lment.de>"
+  ],
+  "description": "A simple fluent API for HTML5 file access",
+  "main": "src/usefs.js",
+  "keywords": [
+    "cordova",
+    "promise",
+    "q",
+    "html5",
+    "requestfilesystem",
+    "file"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "q": "~2.0.2"
+  }
+}
